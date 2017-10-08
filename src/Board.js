@@ -6,10 +6,18 @@ class Board extends React.Component {
     super();
 
     this.state = {
+      // {Array<Number>} An Array of 9 elements that represents our board's
+      //                 9 tiles.
       squares: Array(9).fill(null),
     };
   }
 
+  /**
+   * Renders a sinlge tile.
+   *
+   * @param {Number} i Position of the tile on the board.
+   * @return {HTMLElement}
+   */
   renderSquare(i) {
     return (
       <Square value={this.state.squares[i]}
