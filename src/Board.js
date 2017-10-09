@@ -2,6 +2,8 @@ import React from 'react';
 import Square from './Square';
 
 class Board extends React.Component {
+
+  /** constructor */
   constructor() {
     super();
 
@@ -26,12 +28,22 @@ class Board extends React.Component {
     );
   }
 
+  /**
+   * Handles the click on one of the tiles.
+   *
+   * @param {Number} i The index of the tile clicked.
+   */
   handleClick(i) {
     const squares = this.state.squares.slice();
     squares[i] = 'X';
     this.setState({squares: squares});
   }
 
+  /**
+   * Renders the Board.
+   *
+   * @return {HTMLElement}
+   */
   render() {
     const status = 'Next player: X';
 
